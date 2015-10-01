@@ -1,9 +1,11 @@
 
 private["_origin", "_counter", "_amountToPlace", "_distance", "_side", "_iedArray","_paramArray", "_paramCounter", "_debug"];
 
+iedObjects = ["IEDLandBig_F","IEDLandSmall_F"];
 _paramCounter = 0;
 _paramArray = _this;
 IedList = [];
+iedAction = ["DisarmIed","Disarm IED","",{[1, [nearestObjects [player, iedObjects, 3]], {[_args] call InsP_fnc_deleteIed;}, {}, 'Disarming...'] call ace_common_fnc_progressBar;},{true}] call ace_interact_menu_fnc_createAction;
 
 while {_paramCounter < (count _paramArray)} do  {
 	_arr = _paramArray select _paramCounter;
@@ -45,7 +47,8 @@ while {_paramCounter < (count _paramArray)} do  {
 		
 		_iedPos = [_tx,_ty,-0.05];
 
-		_physicalIed = createMine [_iedType, _iedPos, [], 0];
+		_physicalIed = createVehicle [_iedType, _iedPos, [], 0, "CAN_COLLIDE"];
+		[_physicalIed, 0, ["ACE_MainActions"],iedAction] call ace_interact_menu_fnc_addActionToObject;
 		
 		IedList pushBack _physicalIed;
 		publicVariable "IedList";

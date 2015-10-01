@@ -1,9 +1,6 @@
-{
-	_closestIed = nearestObjects [player, [], 4]; 
-	if (_x in _closestIed) then {
-		deleteVehicle _x;
-	};
-}forEach IedList;
+_dissarmedIed = ((_this select 0) select 0) select 0;
+//hint format ["%1", _dissarmedIed];
+deleteVehicle _dissarmedIed;
 
 InsP_iedDestroyed = InsP_iedDestroyed +1;
 publicVariable "InsP_iedDestroyed";

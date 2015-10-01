@@ -1,7 +1,6 @@
 
 InsP_fnc_explosionTest = compile preprocessFileLineNumbers "server\sys_ied\fn_explosionTest.sqf";
 InsP_fnc_setIedTrigger = compile preprocessFileLineNumbers "server\sys_ied\fn_setIedTrigger.sqf";
-#include "iedObjects.hpp";
 
 if(isNil "IEDSpawned") then
 {
