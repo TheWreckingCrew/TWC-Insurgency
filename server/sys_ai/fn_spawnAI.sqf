@@ -29,13 +29,13 @@ while {(_amountWaves - _spawnedWaves) > 0} do {
 	waitUntil{triggerActivated _triggerName};
 	sleep _spawnDelay;
 	
-	if (floor InsP_enemyMorale <= -3) then {_spawnDelay = 60; _amountWaves = 32;};
-	if (floor InsP_enemyMorale == -2) then {_spawnDelay = 75; _amountWaves = 27;};
-	if (floor InsP_enemyMorale == -1) then {_spawnDelay = 90; _amountWaves = 21;};
-	if (floor InsP_enemyMorale == 0) then {_spawnDelay = 105; _amountWaves = 16;};
-	if (floor InsP_enemyMorale == 1) then {_spawnDelay = 125; _amountWaves = 14;};
-	if (floor InsP_enemyMorale == 2) then {_spawnDelay = 145; _amountWaves = 12;};
-	if (floor InsP_enemyMorale >= 3) then {_spawnDelay = 165; _amountWaves = 10;};
+	if (floor InsP_enemyMorale <= -3) then {_spawnDelay = 120; _amountWaves = 12;};
+	if (floor InsP_enemyMorale == -2) then {_spawnDelay = 130; _amountWaves = 11;};
+	if (floor InsP_enemyMorale == -1) then {_spawnDelay = 140; _amountWaves = 10;};
+	if (floor InsP_enemyMorale == 0) then {_spawnDelay = 150; _amountWaves = 8;};
+	if (floor InsP_enemyMorale == 1) then {_spawnDelay = 160; _amountWaves = 7;};
+	if (floor InsP_enemyMorale == 2) then {_spawnDelay = 170; _amountWaves = 6;};
+	if (floor InsP_enemyMorale >= 3) then {_spawnDelay = 180; _amountWaves = 5;};
 };
 
 deleteVehicle _triggerName;

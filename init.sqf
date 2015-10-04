@@ -36,10 +36,6 @@ execVM "lib\cleanup.sqf";
 
 execVM "lib\bodyremove.sqf";
 
-if ((side player) == blufor) then {
-	execVM "client\sys_ied\disarm.sqf";
-};
-
 execVM "tao\restrict\base.sqf";
 russiancheck = 0;
 execVM "tao\restrict\pilot.sqf";
@@ -75,7 +71,7 @@ if (isNil "nonQuestionableList") then {
 	publicVariable "nonQuestionableList";
 };
 
-QuestionPersonAction = ["QuestionPerson","Question Person","",{call InsP_fnc_questionDisplay},{true}] call ace_interact_menu_fnc_createAction;
+QuestionPersonAction = ["QuestionPerson","Question Person","",{call InsP_fnc_questionDisplay},{alive (_this select 0)}] call ace_interact_menu_fnc_createAction;
 ["C_man_1", 0, ["ACE_MainActions"], QuestionPersonAction] call ace_interact_menu_fnc_addActionToClass;
 
 waitUntil{!isNull player};

@@ -104,35 +104,5 @@ class CfgFunctions
 
 
 {
-
-
 #include "chvd\CfgFunctions.hpp"
-   class TWC
-	{
-
-		class Patrol
-		{
-			class Patrol {file = "func\fnc_patrol.sqf";};
-		};
-		class Defend
-		{
-			class Defend {file = "func\fnc_defend.sqf";};
-		};
-		class Attack
-		{
-			class Defend {file = "func\fnc_attack.sqf";};
-		};
-		class AirAssault
-		{
-			class AirAssault {file = "func\fnc_air_assault.sqf";};
-		};
-		class AttackHelicopter
-		{
-			class AttackHelicopter {file = "func\fnc_attack_helicopter.sqf";};
-		};
-		class AttackPlane
-		{
-			class AttackPlane {file = "func\fnc_attack_plane.sqf";};
-		};
-	};
 };
