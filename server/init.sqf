@@ -66,7 +66,6 @@ _townSetup3 = execVM "server\sys_townSetup\baseArea.sqf";
 waitUntil{scriptDone _townSetup1 && scriptDone _townSetup2 && scriptDone _townSetup3};
 
 #include "sys_vehicles\init.sqf";
-execVM "server\sys_randomAttacks\randomAttacks.sqf";
 
 campFirePerson4 setPosATL [2115.54, 5709.9, 0];
 
