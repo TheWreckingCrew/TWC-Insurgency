@@ -67,14 +67,6 @@ if (isNil "nonQuestionableList") then {
 QuestionPersonAction = ["QuestionPerson","Question Person","",{call InsP_fnc_questionDisplay},{alive (_this select 0)}] call ace_interact_menu_fnc_createAction;
 ["C_man_1", 0, ["ACE_MainActions"], QuestionPersonAction] call ace_interact_menu_fnc_addActionToClass;
 
-_pilots = ["p21", "p22"];
-_apachepilots = ["p23", "p24"];
-_humanCivs = ["humanCiv1", "humanCiv2", "humanCiv3"];
-_specialUnits = _pilots + _humanCivs + _apachepilots;
-_playerString = str player;
-_playerID = getPlayerUID player;
-_totalPlayers = count playableUnits;
-
 cutText ["Receiving...", "BLACK", .001];
 
 titleText ["The Wrecking Crew","PLAIN DOWN"];
@@ -85,41 +77,20 @@ titleText ["Insurgency Plus","PLAIN DOWN"];
 titleFadeOut 7;
 sleep 5;
 
-if (_playerString in _specialUnits) then {
+_pilots = ["p21", "p22"];
+_apachepilots = ["p23", "p24"];
+_humanCivs = ["humanCiv1", "humanCiv2", "humanCiv3"];
 
-	if (_playerString in _pilots) then {
-		if (_totalPlayers < 5) then {
-			["end4", false, 0] call BIS_fnc_endMission;
-		};
-	};
+if ((str player) in _pilots && (count playableUnits) < 5) then {
+    ["end4", false, 0] call BIS_fnc_endMission;
+};
 
-	if (_playerString in _apachepilots) then {
-	    if (_playerID in memberIDArray) then {
-		     if (_totalPlayers < 14) then {
-			 ["end7", false, 0] call BIS_fnc_endMission;
-		     };
-	     }else{
-		     ["end7", false, 0] call BIS_fnc_endMission;
-	     };
-	};
+if ((str player) in _apachepilots && ((count playableUnits) <= 13 || !((getPlayerUID player) in memberIDArray))) then {
+    ["end7", false, 0] call BIS_fnc_endMission;
+};
 
-	if (_playerString in _humanCivs) then {
-		if (_playerID in memberIDArray) then {
-			if (_totalPlayers >= 0) then {
-				if (_playerID in DeadInsurgents) then {
-                    diag_log "Dead";
-					["end6", false, 0] call BIS_fnc_endMission;
-				};
-			}else{
-                diag_log "too little players";
-				["end6", false, 0] call BIS_fnc_endMission;
-			};
-		}else{
-            diag_log "not a human civ";
-			["end6", false, 0] call BIS_fnc_endMission;
-		};
-	};
-
+if ((str player) in _humanCivs && ((count playableUnits) <= 15 || !((getPlayerUID player) in memberIDArray || (getPlayerUID player) in DeadInsurgents))) then {
+    ["end6", false, 0] call BIS_fnc_endMission;
 };
 
 cutText ["", "BLACK IN", 2];
