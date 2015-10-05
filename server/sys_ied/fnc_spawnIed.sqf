@@ -14,12 +14,10 @@
  * Example:
  * ["IEDLandBig_F", getPos player, 3] call TWC_fnc_spawnIed
  */
-private ["_ied", "_trigger", "_defuseAction"];
-
 params ["_iedType", "_position", ["_spawnRadius", 0], ["_triggerRadius", 12]];
 
 // Create visible explosive object
-_ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
+local _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
 
 // Handle creating explosion and cleaning up on object being destroyed
 _ied addEventHandler ["Killed", {
@@ -31,7 +29,7 @@ _ied addEventHandler ["Killed", {
 }];
 
 // Create trigger for setting off the explosive
-_trigger = createTrigger ["EmptyDetector", _position, true];
+local _trigger = createTrigger ["EmptyDetector", _position, true];
 _trigger setTriggerArea [_triggerRadius, _triggerRadius, 0, false];
 _trigger setTriggerActivation ["ANY", "PRESENT", true];
 _trigger setTriggerStatements [
@@ -48,7 +46,7 @@ _trigger setVariable ["InsP_ied", _ied, true];
 _ied setVariable ["InsP_trigger", _trigger, true];
 
 // Generate Action for defusing the explosive
-_defuseAction = [
+local _defuseAction = [
     "InsP_defuse_ied",
     "Disarm",
     "",
