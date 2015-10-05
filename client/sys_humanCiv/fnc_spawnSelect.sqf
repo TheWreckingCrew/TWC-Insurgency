@@ -11,8 +11,6 @@ fnc_clickToSpawn = {
 
 while {true} do {
     openMap [true, true];
-    mapAnimAdd [0, 1, getMarkerPos "ied4"];
-    mapAnimCommit;
 
     _m = 0;
     _allMarkers = [];
@@ -26,7 +24,7 @@ while {true} do {
     } forEach InsP_cacheGroup;
 
     onMapSingleClick "_pos spawn fnc_clickToSpawn; true;";
-    
+
     hintSilent "Click on an IED Factory to Spawn";
     waitUntil {InsP_civSpawned};
     InsP_civSpawned = false;
