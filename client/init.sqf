@@ -7,7 +7,6 @@ waitUntil {player == player};
 InsP_fnc_questionDisplay = compile preProcessFileLineNumbers "client\sys_intel\fnc_questionDisplay.sqf";
 InsP_fnc_possibleIntel = compile preProcessFileLineNumbers "client\sys_intel\fnc_possibleIntel.sqf";
 InsP_fnc_spawnSelect = compile preprocessFileLineNumbers "client\sys_humanCiv\fnc_spawnSelect.sqf";
-InsP_fnc_deleteIed = compile preprocessFileLineNumbers "client\sys_ied\fn_deleteIed.sqf";
 
 if (InsP_playerCiv) then {
 	execVM "client\sys_humanCiv\init.sqf";

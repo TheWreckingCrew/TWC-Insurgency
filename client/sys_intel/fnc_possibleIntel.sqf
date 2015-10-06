@@ -1,4 +1,3 @@
-
 _givenNumber = (_this select 0) select 0;
 _civilianQuestioned = (_this select 0) select 1;
 
@@ -7,7 +6,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 }else{
 	nonQuestionableList pushBack _civilianQuestioned;
 	publicVariable "nonQuestionableList";
-	
+
 	if (_givenNumber == 0) then {
 		hint "I know where they might be. Let me mark it on your map.";
 		_color = "ColorOrange";
@@ -21,7 +20,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		_marker setMarkerText (str(_distance) + "m");
 		_marker setMarkerSize [0.5,0.5];
 		[_marker, true] call CBA_fnc_setMarkerPersistent;
-		
+
 		switch (str _object) do {
 			case (str (InsP_cacheGroup select 0)): {cacheAMarkers pushBack _marker; publicVariable "cacheAMarkers"};
 			case (str (InsP_cacheGroup select 1)): {cacheBMarkers pushBack _marker; publicVariable "cacheBMarkers"};

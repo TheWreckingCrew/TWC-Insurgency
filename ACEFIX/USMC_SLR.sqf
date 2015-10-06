@@ -1,6 +1,8 @@
 waitUntil {!isNull player};       //to prevent MP / JIP issues
 
-_unit = _this select 0;
+params ["_unit"];
+
+comment "Remove existing items";
 removeAllWeapons _unit;
 removeAllItems _unit;
 removeAllAssignedItems _unit;
@@ -24,10 +26,3 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "tf_anprc152";
 _unit linkItem "rhsusf_ANPVS_14";
-
-comment "Set identity";
-_unit setFace "GreekHead_A3_01";
-_unit setSpeaker "AGM_NoVoice";
-
-
-if(true) exitWith{};

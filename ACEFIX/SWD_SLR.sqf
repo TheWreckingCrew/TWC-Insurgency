@@ -1,9 +1,6 @@
-
-
 waitUntil {!isNull player};       //to prevent MP / JIP issues
 
-_unit = _this select 0;
-comment "Exported from Arsenal by FakeMatty";
+params ["_unit"];
 
 comment "Remove existing items";
 removeAllWeapons _unit;
@@ -32,12 +29,3 @@ _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "tf_anprc152";
-
-comment "Set identity";
-_unit setFace "WhiteHead_07";
-_unit setSpeaker "Male02ENG";
-
-
-
-
-if(true) exitWith{};

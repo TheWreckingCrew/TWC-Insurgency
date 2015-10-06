@@ -1,4 +1,3 @@
-
 _randNumber = floor(random 7);
 _removeQuestioning = getPos player nearestObject "C_man_1";
 
