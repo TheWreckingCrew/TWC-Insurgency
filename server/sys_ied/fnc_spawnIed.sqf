@@ -62,6 +62,10 @@ local _defuseAction = [
                 local _trigger = _ied getVariable ["InsP_trigger", objNull];
                 deleteVehicle _trigger;
                 deleteVehicle _ied;
+                InsP_iedDestroyed = InsP_iedDestroyed + 1;
+                InsP_enemyMorale = InsP_enemyMorale + 0.1;
+                publicVariable "InsP_iedDestroyed";
+                publicVariable "InsP_enemyMorale";
             },
             {},
             "Disarming..."
