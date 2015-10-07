@@ -1,1 +1,1 @@
-InsP_playerCiv = (faction player == civilian);
+InsP_playerCiv = (faction player == "CIV_F");
