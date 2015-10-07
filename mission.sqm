@@ -138,7 +138,7 @@ class Mission
 					id=1;
 					side="WEST";
 					vehicle="B_Soldier_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
@@ -672,7 +672,7 @@ class Mission
 					id=26;
 					side="CIV";
 					vehicle="C_man_1";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 					text="humanCiv1";

@@ -45,41 +45,4 @@ _trigger setTriggerStatements [
 _trigger setVariable ["InsP_ied", _ied, true];
 _ied setVariable ["InsP_trigger", _trigger, true];
 
-// Generate Action for defusing the explosive
-local _defuseAction = [
-    "InsP_defuse_ied",
-    "Disarm",
-    "",
-    {
-        params ["_args"];
-        _args params ["_ied"];
-        [
-            5,
-            [_ied],
-            {
-                params ["_args"];
-                _args params ["_ied"];
-                local _trigger = _ied getVariable ["InsP_trigger", objNull];
-                deleteVehicle _trigger;
-                deleteVehicle _ied;
-                InsP_iedDestroyed = InsP_iedDestroyed + 1;
-                InsP_enemyMorale = InsP_enemyMorale + 0.1;
-                publicVariable "InsP_iedDestroyed";
-                publicVariable "InsP_enemyMorale";
-            },
-            {},
-            "Disarming..."
-        ] call ACE_common_fnc_progressBar;
-    },
-    {true},
-    nil,
-    [_ied]
-] call ACE_interact_menu_fnc_createAction;
-
-// Add action to explosive object on all machines
-[-2, {
-    params ["_ied", "_defuseAction"];
-    [_ied, 0, ["ACE_MainActions"], _defuseAction] call ACE_interact_menu_fnc_addActionToObject;
-}, [_ied, _defuseAction]] call CBA_fnc_globalExecute;
-
 _ied
