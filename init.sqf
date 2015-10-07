@@ -28,7 +28,7 @@ memberIDArray = ["_SP_PLAYER_","76561198078628958", "76561198010598279", "765611
 execVM "tao\restrict\RadioChannels.sqf";
 execVM "lib\cleanup.sqf";
 execVM "lib\bodyremove.sqf";
-execVM "tao\restrict\base.sqf";
+//execVM "tao\restrict\base.sqf";
 execVM "tao\restrict\pilot.sqf";
 execVM "tao\restrict\Radio.sqf";
 
