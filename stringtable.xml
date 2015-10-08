@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="TWC">
+	<Package name="Insurgency">
+		<Container name="road_ied">
+			<Key ID="STR_TWC_road_ied_defuse_action_name">
+				<Original>Defuse</Original>
+				<English>Defuse</English>
+			</Key>
+			<Key ID="STR_TWC_road_ied_defuse_in_progress">
+				<Original>Defusing...</Original>
+				<English>Defusing...</English>
+			</Key>
+		</Container>
+	</Package>
+</Project>
