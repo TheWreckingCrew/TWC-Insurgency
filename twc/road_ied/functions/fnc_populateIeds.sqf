@@ -46,13 +46,12 @@ local _fnc_filterRoadPositions = {
 _allRoads = [_allRoads, _fnc_filterRoadPositions] call CBA_fnc_filter;
 _allRoads = _allRoads arrayIntersect _allRoads;
 
-if (count _allRoads <= 0) exitWith {};
-
 // Spawn IEDs
 for "_i" from 0 to _amount step 1 do {
+    if (count _allRoads <= 0) exitWith {};
+    
     local _road = _allRoads call BIS_fnc_selectRandom;
     local _iedType = _iedTypes call BIS_fnc_selectRandom;
     [_iedType, getPos _road, 5] call FUNC(spawnIed);
     _allRoads = _allRoads - [_road];
-    if (count _allRoads <= 0) exitWith {};
 };
