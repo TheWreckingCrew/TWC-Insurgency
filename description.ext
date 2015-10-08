@@ -33,6 +33,7 @@ class Params {
 
 // XEH
 class Extended_PreInit_EventHandlers {
+	#include "twc\building_clusters\CfgEventHandlerPreInit.hpp"
 	#include "twc\road_ied\CfgEventHandlerPreInit.hpp"
 };
 
