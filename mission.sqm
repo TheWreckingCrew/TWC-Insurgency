@@ -2308,7 +2308,7 @@ class Mission
 		class Item6
 		{
 			position[]={1874.7118,5.5700598,5483.4116};
-			name="iedRestrictionZone";
+			name="baseRestrictionZone";
 			type="Empty";
 			colorName="ColorRed";
 			a=600;

@@ -26,7 +26,7 @@ _ied addEventHandler ["Killed", {
     params ["_unit", "_killer"];
     _iedExplosive = createMine [typeOf _unit, getPos _unit, [], 0];
     _iedExplosive setDamage 1;
-    [GVAR(exploded), [typeOf _unit, getPos _unit]] call ACE_common_fnc_globalEvent;
+    [QGVAR(exploded), [typeOf _unit, getPos _unit]] call ACE_common_fnc_globalEvent;
     deleteVehicle (_unit getVariable [QGVAR(trigger), objNull]);
     deleteVehicle _unit;
 }];

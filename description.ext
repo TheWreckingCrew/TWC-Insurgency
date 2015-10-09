@@ -29,15 +29,23 @@ class Params {
 		values[] = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 100};
 		default = 30;
 	};
+
+	class CacheAmount {
+		title = "Insurgent Cache Amount";
+		values[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		default = 5;
+	};
 };
 
 // XEH
 class Extended_PreInit_EventHandlers {
 	#include "twc\building_clusters\CfgEventHandlerPreInit.hpp"
+	#include "twc\insurgent_caches\CfgEventHandlerPreInit.hpp"
 	#include "twc\road_ied\CfgEventHandlerPreInit.hpp"
 };
 
 class Extended_PostInit_EventHandlers {
+	#include "twc\insurgent_caches\CfgEventHandlerPostInit.hpp"
 	#include "twc\road_ied\CfgEventHandlerPostInit.hpp"
 };
 

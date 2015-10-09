@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 params ["_object", "_objectPool", "_maxDistance"];
 
 local _nearbyObjects = [];
