@@ -37,6 +37,85 @@ class Params {
 	};
 };
 
+// ACE Settings
+class ACE_Settings {
+	class ace_sitting_enable {
+		value = 1;
+		typeName = "BOOL";
+		force = 1;
+	};
+	class ace_finger_enabled {
+		value = 1;
+		typeName = "BOOL";
+		force = 1;
+	};
+	class ace_respawn_SavePreDeathGear {
+	    value = 1;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+	class ace_respawn_RemoveDeadBodiesDisconnected {
+	    value = 0;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+	class ace_microdagr_MapDataAvailable {
+		value = 1;
+		typeName = "SCALAR";
+		force = 1;
+	};
+	class ace_explosives_PunishNonSpecialists {
+	    value = 0;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+	class ace_medical_medicSetting {
+		value = 0;
+		typeName = "SCALAR";
+		force = 1;
+	};
+	class ace_medical_litterCleanUpDelay {
+		value = 1800;
+		typeName = "SCALAR";
+		force = 1;
+	};
+	class ace_repair_engineerSetting_Repair {
+	    value = 0;
+	    typeName = "SCALAR";
+	    force = 1;
+	};
+	class ace_repair_consumeItem_ToolKit {
+	    value = 0;
+	    typeName = "SCALAR";
+	    force = 1;
+	};
+	class ace_repair_fullRepairLocation {
+	    value = 0;
+	    typeName = "SCALAR";
+	    force = 1;
+	};
+	class ace_repair_engineerSetting_fullRepair {
+	    value = 0;
+	    typeName = "SCALAR";
+	    force = 1;
+	};
+	class ace_advanced_ballistics_enabled {
+	    value = 1;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+	class ace_interaction_EnableTeamManagement {
+	    value = 0;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+	class ace_zeus_autoAddObjects {
+	    value = 1;
+	    typeName = "BOOL";
+	    force = 1;
+	};
+};
+
 // XEH
 class Extended_PreInit_EventHandlers {
 	#include "twc\building_clusters\CfgEventHandlerPreInit.hpp"
